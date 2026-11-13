@@ -1,0 +1,92 @@
+{
+  "report_id": "7f3c2a10-demo",
+  "status": "ready",
+  "language": "en",
+  "reading_level": "simple",
+  "is_red_flag": false,
+  "red_flags": [],
+  "values": [
+    {
+      "test": "Hemoglobin",
+      "value": 9.8,
+      "unit": "g/dL",
+      "range_on_report": "12.0 - 15.5",
+      "range_low": 12.0,
+      "range_high": 15.5,
+      "status": "needs_attention",
+      "is_red_flag": false,
+      "explanation": "Lower than the reference range on your report. This can cause feelings of tiredness or reduced energy."
+    },
+    {
+      "test": "Serum Ferritin",
+      "value": 11.5,
+      "unit": "ng/mL",
+      "range_on_report": "20.0 - 200.0",
+      "range_low": 20.0,
+      "range_high": 200.0,
+      "status": "needs_attention",
+      "is_red_flag": false,
+      "explanation": "Below the printed reference range. Ferritin measures the amount of stored iron in your body."
+    },
+    {
+      "test": "Total WBC Count",
+      "value": 7200,
+      "unit": "/cumm",
+      "range_on_report": "4000 - 11000",
+      "range_low": 4000,
+      "range_high": 11000,
+      "status": "normal",
+      "is_red_flag": false,
+      "explanation": "Within the healthy reference range. White blood cells help your immune system fight infections."
+    },
+    {
+      "test": "Platelet Count",
+      "value": 240000,
+      "unit": "/cumm",
+      "range_on_report": "150000 - 450000",
+      "range_low": 150000,
+      "range_high": 450000,
+      "status": "normal",
+      "is_red_flag": false,
+      "explanation": "Within the normal range. Platelets are cell fragments that help your blood clot normally."
+    },
+    {
+      "test": "C-Reactive Protein (CRP)",
+      "value": 6.8,
+      "unit": "mg/L",
+      "range_on_report": null,
+      "range_low": null,
+      "range_high": null,
+      "status": "no_range_on_report",
+      "is_red_flag": false,
+      "explanation": "No reference range is printed on your report for this marker. Please verify this value directly with your doctor."
+    }
+  ],
+  "medicines": [
+    {
+      "name": "Ferrous Sulphate 200 mg",
+      "purpose": "An iron tablet often given when hemoglobin or iron stores are low.",
+      "timing_as_written": "1-0-0 after breakfast",
+      "watch_for": [
+        "Dark-colored stools are common and harmless",
+        "Inform your doctor if severe stomach cramps occur"
+      ]
+    },
+    {
+      "name": "Vitamin C 500 mg",
+      "purpose": "Ascorbic acid tablet taken alongside iron to help your body absorb iron better.",
+      "timing_as_written": "1-0-0 with iron tablet",
+      "watch_for": [
+        "Take with a full glass of water",
+        "Tell your doctor if you experience persistent acidity"
+      ]
+    }
+  ],
+  "doctor_questions": [
+    "What could be the underlying reason for my low hemoglobin level?",
+    "For how many weeks should I take the iron supplement before re-testing?",
+    "What dietary choices can help support my iron absorption alongside this medication?",
+    "Does my C-Reactive Protein (CRP) level require any additional evaluation?"
+  ],
+  "disclaimer": "This explains your report. It does not replace your doctor."
+}

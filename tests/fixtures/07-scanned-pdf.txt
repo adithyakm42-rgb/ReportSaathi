@@ -1,0 +1,32 @@
+================================================================================
+                    METROPOLIS HEALTH & WELLNESS PATH LAB
+        Plot 14, Ring Road, Bengaluru - 560038 | Tel: +91 80 2345 6789
+================================================================================
+PATIENT NAME  : [ANONYMIZED]             COLLECTION DATE : 10-Nov-2026 08:30 AM
+PATIENT ID    : PT-007                   REPORTING DATE  : 10-Nov-2026 02:45 PM
+AGE / GENDER  : 45 Y / Male              REFERRED BY     : Dr. S. Rao, MD
+BARCODE       : *8901234567*             SAMPLE TYPE     : Whole Blood EDTA / Serum
+================================================================================
+INVESTIGATION                   OBSERVED VALUE   UNITS      REFERENCE INTERVAL
+================================================================================
+DIABETIC PROFILE:
+  Fasting Blood Sugar (FBS)     108.0            mg/dL      70.0 - 100.0 (Normal)
+                                                            100.0 - 125.0 (Impaired)
+  Glycated Hemoglobin (HbA1c)   6.1              %          < 5.7 (Normal)
+                                                            5.7 - 6.4 (Prediabetes)
+                                                            >= 6.5 (Diabetes)
+  Estimated Average Glucose     128.0            mg/dL      90.0 - 120.0
+
+THYROID FUNCTION:
+  Free Triiodothyronine (FT3)   3.1              pg/mL      2.0 - 4.4
+  Free Thyroxine (FT4)          1.2              ng/dL      0.8 - 1.8
+  Thyroid Stimulating Hormone   4.85             uIU/mL     0.40 - 4.50
+
+RENAL PARAMETERS:
+  Serum Creatinine              0.95             mg/dL      0.60 - 1.20
+  Blood Urea                    24.0             mg/dL      15.0 - 40.0
+  eGFR (CKD-EPI)                98               mL/min     > 60.0
+================================================================================
+* This is an electronically authenticated clinical report.
+* Reference intervals adapted from standard clinical consensus for adult males.
+================================================================================

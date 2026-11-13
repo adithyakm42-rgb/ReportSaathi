@@ -1,0 +1,77 @@
+{
+  "fixture_id": "01-normal-report",
+  "title": "Normal Complete Blood Count (CBC)",
+  "description": "Standard adult CBC with all values strictly within printed reference ranges.",
+  "patient": {
+    "anonymized_id": "PT-001",
+    "age": 34,
+    "gender": "Female"
+  },
+  "raw_text": "LABORATORY REPORT\nTest: Complete Blood Count\nPatient ID: PT-001\nDate: 2026-11-10\n--------------------------------------------------\nHemoglobin: 13.5 g/dL (Ref Range: 12.0 - 15.5)\nTotal WBC Count: 6,800 /cumm (Ref Range: 4,000 - 11,000)\nRBC Count: 4.5 mil/uL (Ref Range: 3.8 - 5.2)\nPlatelet Count: 240,000 /cumm (Ref Range: 150,000 - 450,000)\nPacked Cell Volume (PCV): 41.0 % (Ref Range: 36.0 - 46.0)\n--------------------------------------------------\nEnd of Report. Verified by Pathologist.",
+  "extracted_data": {
+    "document_id": "doc-norm-01",
+    "extraction_status": "completed",
+    "requires_verification": false,
+    "confidence_score": 0.98,
+    "values": [
+      {
+        "test": "Hemoglobin",
+        "value": 13.5,
+        "unit": "g/dL",
+        "range_on_report": "12.0 - 15.5",
+        "range_low": 12.0,
+        "range_high": 15.5,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Your hemoglobin level is within the normal healthy range."
+      },
+      {
+        "test": "Total WBC Count",
+        "value": 6800,
+        "unit": "/cumm",
+        "range_on_report": "4000 - 11000",
+        "range_low": 4000,
+        "range_high": 11000,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Your white blood cell count is within the healthy reference range."
+      },
+      {
+        "test": "RBC Count",
+        "value": 4.5,
+        "unit": "mil/uL",
+        "range_on_report": "3.8 - 5.2",
+        "range_low": 3.8,
+        "range_high": 5.2,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Your red blood cell count is normal."
+      },
+      {
+        "test": "Platelet Count",
+        "value": 240000,
+        "unit": "/cumm",
+        "range_on_report": "150000 - 450000",
+        "range_low": 150000,
+        "range_high": 450000,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Your platelet count is within the normal range to help with clotting."
+      },
+      {
+        "test": "Packed Cell Volume (PCV)",
+        "value": 41.0,
+        "unit": "%",
+        "range_on_report": "36.0 - 46.0",
+        "range_low": 36.0,
+        "range_high": 46.0,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Your PCV level is normal, showing healthy blood concentration."
+      }
+    ],
+    "medicines": [],
+    "red_flags": [],
+    "disclaimer": "This explains your report. It does not replace your doctor."
+  }
+}

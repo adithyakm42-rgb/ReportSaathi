@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Antigravity Engineering & QA Playbook — ReportSaathi</title>
+<style>
+  @page {
+    size: A4;
+    margin: 18mm 14mm 18mm 14mm;
+    @bottom-right {
+      content: counter(page);
+    }
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1e293b;
+    line-height: 1.45;
+    font-size: 9.5pt;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cover {
+    page-break-after: always;
+    padding-top: 30px;
+    text-align: left;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 4px 10px;
+    font-size: 8pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: 4px;
+    background: #e0f2fe;
+    color: #0369a1;
+    margin-bottom: 12px;
+  }
+
+  h1 {
+    font-size: 22pt;
+    color: #0f172a;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+    font-weight: 800;
+  }
+
+  .subtitle {
+    font-size: 12pt;
+    color: #475569;
+    margin-bottom: 22px;
+    line-height: 1.4;
+  }
+
+  .meta-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 25px;
+  }
+
+  .meta-box table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .meta-box td {
+    padding: 4px 8px;
+    font-size: 9pt;
+  }
+
+  .meta-box td.label {
+    color: #64748b;
+    font-weight: 600;
+    width: 160px;
+  }
+
+  .meta-box td.val {
+    color: #0f172a;
+    font-weight: 500;
+  }
+
+  h2 {
+    font-size: 13pt;
+    color: #0f172a;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 4px;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 10.5pt;
+    color: #1e3a8a;
+    margin-top: 16px;
+    margin-bottom: 6px;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin: 0 0 6px 0;
+  }
+
+  ul, ol {
+    margin: 0 0 8px 0;
+    padding-left: 20px;
+  }
+
+  li {
+    margin-bottom: 3px;
+  }
+
+  .prompt-card {
+    background: #f0fdf4;
+    border-left: 4px solid #16a34a;
+    border-radius: 4px;
+    padding: 8px 12px;
+    margin: 8px 0;
+    page-break-inside: avoid;
+  }
+
+  .prompt-title {
+    font-size: 8pt;
+    font-weight: 700;
+    color: #15803d;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 3px;
+  }
+
+  .prompt-text {
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 8.5pt;
+    color: #14532d;
+    white-space: pre-wrap;
+    background: #ffffff;
+    border: 1px solid #bbf7d0;
+    border-radius: 4px;
+    padding: 7px 9px;
+    margin: 0;
+  }
+
+  .check-card {
+    background: #fffbeb;
+    border-left: 4px solid #d97706;
+    border-radius: 4px;
+    padding: 7px 11px;
+    margin: 6px 0;
+    font-size: 8.5pt;
+    page-break-inside: avoid;
+  }
+
+  .check-title {
+    font-weight: 700;
+    color: #b45309;
+    margin-bottom: 2px;
+  }
+
+  .why-card {
+    background: #f8fafc;
+    border-left: 4px solid #3b82f6;
+    border-radius: 4px;
+    padding: 7px 11px;
+    margin: 6px 0;
+    font-size: 8.5pt;
+    page-break-inside: avoid;
+  }
+
+  .why-title {
+    font-weight: 700;
+    color: #1d4ed8;
+    margin-bottom: 2px;
+  }
+
+  table.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 8pt;
+  }
+
+  table.data-table th, table.data-table td {
+    border: 1px solid #cbd5e1;
+    padding: 5px 7px;
+    text-align: left;
+  }
+
+  table.data-table th {
+    background: #f1f5f9;
+    color: #334155;
+    font-weight: 600;
+  }
+
+  code {
+    font-family: "Consolas", "Courier New", monospace;
+    background: #f1f5f9;
+    padding: 1px 3px;
+    border-radius: 3px;
+    font-size: 8.5pt;
+    color: #0f172a;
+  }
+
+  .page-break {
+    page-break-after: always;
+  }
+
+  .callout-alert {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    padding: 7px 11px;
+    border-radius: 4px;
+    margin: 8px 0;
+    font-size: 8.5pt;
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER PAGE -->
+<div class="cover">
+  <div class="badge">Google Antigravity Field Guide</div>
+  <h1>Antigravity Engineering &amp; QA Playbook</h1>
+  <div class="subtitle">Complete Operational Guide to Prompting, Pre-Flight Verification, and Safe Production Delivery in Multi-Agent Collaborative Teams</div>
+
+  <div class="meta-box">
+    <table>
+      <tr>
+        <td class="label">Project:</td>
+        <td class="val"><strong>ReportSaathi</strong> (Plain-Language Medical Report Explainer)</td>
+      </tr>
+      <tr>
+        <td class="label">Assigned Role:</td>
+        <td class="val"><strong>Person 3: Quality &amp; Engineering Lead</strong></td>
+      </tr>
+      <tr>
+        <td class="label">Collaborators:</td>
+        <td class="val">Person 1 (Product / Design Lead), Person 2 (DevOps / Systems Lead)</td>
+      </tr>
+      <tr>
+        <td class="label">Primary Environment:</td>
+        <td class="val">Google Antigravity IDE (Windows, PowerShell, Standard Sandbox)</td>
+      </tr>
+      <tr>
+        <td class="label">Repository:</td>
+        <td class="val"><code>https://github.com/abhinavjanawade2242-dev/ReportSaathi-Project-Resources</code></td>
+      </tr>
+      <tr>
+        <td class="label">Author / Lead:</td>
+        <td class="val">Abhinav Janawade (Person 3)</td>
+      </tr>
+      <tr>
+        <td class="label">Version &amp; Date:</td>
+        <td class="val">Version 1.0 — November 2026</td>
+      </tr>
+    </table>
+  </div>
+
+  <h2>Document Objective</h2>
+  <p>
+    This document serves as an exhaustive, battle-tested manual for completing complex software engineering, 
+    quality assurance, and clinical safety tasks using <strong>Google Antigravity</strong>. 
+    It documents the exact prompts executed during the project, the rigorous pre-flight checks required before 
+    submitting each prompt, the strategic architectural rationale behind every command, and the troubleshooting 
+    nuances of Antigravity's sandboxed runtime.
+  </p>
+
+  <h2>Executive Summary of Completed Deliverables</h2>
+  <table class="data-table">
+    <thead>
+      <tr>
+        <th>Workstream</th>
+        <th>Deliverables Completed</th>
+        <th>Key Verification Metric</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Deterministic Safety</strong></td>
+        <td><code>backend/safety/rules.py</code>, <code>banned_phrases.py</code></td>
+        <td>100% deterministic emergency alerts prior to AI; 13 safety tests passing</td>
+      </tr>
+      <tr>
+        <td><strong>OCR Pipeline</strong></td>
+        <td><code>backend/integrations/ocr.py</code></td>
+        <td>Tesseract integration, uncertainty scoring &amp; user correction re-validation</td>
+      </tr>
+      <tr>
+        <td><strong>Privacy &amp; Ephemeral Storage</strong></td>
+        <td><code>backend/safety/privacy.py</code></td>
+        <td>Log scrubbing for PHI, path-traversal blocking, automatic TTL purge</td>
+      </tr>
+      <tr>
+        <td><strong>API Contracts &amp; Testing</strong></td>
+        <td><code>tests/test_api_contract.py</code>, <code>tests/test_privacy.py</code></td>
+        <td>40 / 40 unit and contract tests passing (100% pass rate in 0.039s)</td>
+      </tr>
+      <tr>
+        <td><strong>Frontend Web Application</strong></td>
+        <td><code>frontend/</code> (React 18 + Vite 5 + TypeScript)</td>
+        <td>6 core screens, offline status guard, empty state handling; builds in 770ms</td>
+      </tr>
+      <tr>
+        <td><strong>Backend API Server</strong></td>
+        <td><code>backend/main.py</code> (FastAPI)</td>
+        <td>Live routes for upload, extraction, correction, explain, questions &amp; feedback</td>
+      </tr>
+      <tr>
+        <td><strong>CI/CD &amp; Clinical Governance</strong></td>
+        <td><code>.github/workflows/ci.yml</code>, <code>06d-clinical-review-protocol.md</code></td>
+        <td>Automated GitHub Actions CI; formal physician sign-off audit protocol</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- SECTION 1 -->
+<div class="page-break"></div>
+<h2>1. The Antigravity Operating Model</h2>
+<p>
+  Google Antigravity is an agentic AI development environment capable of inspecting workspaces, executing shell commands, 
+  authoring multi-file modules, and scheduling reactive background tasks. Achieving flawless results requires understanding 
+  its architectural guardrails:
+</p>
+
+<h3>1.1 Sandbox Isolation: Standard Mode vs. Bypass Mode</h3>
+<ul>
+  <li>
+    <strong>Standard Sandbox Mode (<code>BypassSandbox: false</code>):</strong> 
+    By default, Antigravity commands run in an isolated environment with zero outbound network access. 
+    Local compilation (<code>npm run build</code>), unit tests (<code>python -m unittest</code>), and local file operations 
+    must always run sandboxed without asking for user elevation.
+  </li>
+  <li>
+    <strong>Bypass Sandbox Mode (<code>BypassSandbox: true</code>):</strong> 
+    Disables network isolation and allows external connections (e.g., <code>git fetch origin</code>, <code>git push origin</code>, 
+    <code>npm install</code>). Antigravity rules dictate: <em>Always attempt sandboxed first; only elevate the single network-dependent step</em>.
+  </li>
+</ul>
+
+<h3>1.2 The Golden Rule: Continuous Remote Git Synchronization</h3>
+<div class="callout-alert">
+  <strong>MANDATORY WORKFLOW DIRECTIVE:</strong> In collaborative multi-developer hackathon teams, teammates push code independently. 
+  Before proceeding to any new step or drafting new code, Antigravity MUST execute <code>git fetch origin</code> and inspect 
+  <code>git log HEAD..origin/main</code> to avoid catastrophic merge collisions or redundant work.
+</div>
+
+<h3>1.3 Respecting Persona &amp; Team Boundaries</h3>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Role</th>
+      <th>Team Member</th>
+      <th>Strict Boundaries &amp; Owned Modules</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Person 1</strong></td>
+      <td>Shrinidhi (Product / Design)</td>
+      <td>Owns PRD scope, UI/UX screens in Google Stitch, <code>docs/01</code>, <code>04</code>, <code>07</code>, <code>09</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Person 2</strong></td>
+      <td>Chethan (DevOps / Systems)</td>
+      <td>Owns backend specs, Gemini API integration, <code>docs/02</code>, <code>05</code>, <code>06</code>, <code>10</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Person 3 (You)</strong></td>
+      <td>Abhinav (Quality / Engineering)</td>
+      <td>Owns test fixtures, safety engine, OCR parser, contract tests, frontend code, and release QA.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SECTION 2 -->
+<h2>2. The Pre-Prompt Verification Framework</h2>
+<p>
+  Before submitting any instruction to Antigravity, apply the <strong>5-Point Pre-Flight Checklist</strong> to guarantee agent alignment:
+</p>
+<ol>
+  <li><strong>Remote Git State:</strong> Has another team member pushed changes to <code>main</code>? (Run <code>git fetch origin</code>).</li>
+  <li><strong>Role Scope Validation:</strong> Does this task belong to Person 3, or will it intrude on Person 1 or 2's documented ownership?</li>
+  <li><strong>Environment Prerequisite Check:</strong> Are required tools installed? (e.g., Tesseract binary at <code>C:\Program Files\Tesseract-OCR\tesseract.exe</code>, Node.js v20+, Python 3.12+).</li>
+  <li><strong>Medical Safety Grounding:</strong> Does this prompt violate safety rules (e.g., attempting disease diagnosis, medication dosage modification, or inventing reference ranges)?</li>
+  <li><strong>Artifact Verification:</strong> Do downstream files exist before asking the agent to test them?</li>
+</ol>
+
+<!-- SECTION 3: STEP-BY-STEP PLAYBOOK -->
+<div class="page-break"></div>
+<h2>3. Step-by-Step Prompt Playbook: From Setup to Delivery</h2>
+
+<!-- STEP 1 -->
+<h3>Step 1: Workspace Initialization &amp; Team Role Anchoring</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Verify that your target repository exists and you have write permissions.</li>
+    <li>Identify your local scratch workspace directory (e.g. <code>C:\Users\abhin\.gemini\antigravity\scratch\</code>).</li>
+    <li>Have your team roles and assignments clearly defined from hackathon kickoff.</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">We are building ReportSaathi (a medical report and prescription explainer) as a 3-person team:
+- Person 1 (Shrinidhi): Product Strategy &amp; Design Lead (frontend UX, docs/01, 04, 07, 09)
+- Person 2 (Chethan): Systems &amp; DevOps Lead (backend specs, Gemini AI, docs/02, 05, 06, 10)
+- Person 3 (Me): Quality &amp; Engineering Lead (test fixtures, safety rules, OCR integration, frontend implementation, QA)
+
+Clone our repo https://github.com/abhinavjanawade2242-dev/ReportSaathi-Project-Resources.git into the scratch directory.
+Inspect docs/01 to docs/10 and summarize our MVP scope and my assigned QA tasks.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Anchors the agent's identity as Person 3, preventing it from overwriting Person 1's product documents or Person 2's backend specifications.
+  Forces the agent to ground all subsequent work in the agreed architectural decisions.
+</div>
+
+<!-- STEP 2 -->
+<h3>Step 2: Mandatory GitHub Synchronization Routine</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Network status: Antigravity needs elevated bypass to reach GitHub.</li>
+    <li>Ensure local working tree is clean (no uncommitted conflicting edits).</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Before proceeding to any step, verify the contents of GitHub:
+Run 'git fetch origin' (using BypassSandbox: true if network blocks).
+Check if any teammates have pushed new commits with 'git log HEAD..origin/main --oneline'.
+Verify our local git status and report what has been modified or added.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Maintains multi-developer synchronization. Teammates Chethan and Shrinidhi pushed documentation commits frequently; 
+  running this prompt prevents diverged git branches and painful merge conflicts.
+</div>
+
+<!-- STEP 3 -->
+<h3>Step 3: Creating Stage 6 Anonymized Test Fixtures (TEST-01)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Read <code>docs/06-test-plan.md</code> and <code>docs/06b-safety-rules.md</code>.</li>
+    <li>Ensure no real patient personal health information (PHI) is included.</li>
+    <li>Confirm the 10 required clinical scenarios (normal, elevated lipids, low Hb with prescription, missing ranges, blurry OCR, emergency red flags, multilingual).</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Create 10 comprehensive, fully anonymized medical report test fixtures in tests/fixtures/ (01 to 10) adhering to docs/06-test-plan.md:
+1. Normal CBC
+2. High lipid profile
+3. Low hemoglobin with iron prescription
+4. Missing printed reference ranges (triggering no_range_on_report)
+5. Blurry OCR report (triggering requires_verification)
+6. Multi-panel CBC+LFT+KFT batch
+7. Scanned PDF text extraction
+8. OCR challenges (Indian numbering commas, '&lt; 0.5', 'Negative')
+9. Trilingual benchmark (English, Hindi, Kannada across Simple, Standard, Detailed)
+10. Critical red-flag emergency (Potassium &gt;= 6.8 mmol/L, Platelets &lt;= 18,000 /uL)</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Establishes Test-Driven Development (TDD). In safety-critical healthcare software, you must define the gold-standard 
+  test cases and edge-case boundaries before writing a single line of application code.
+</div>
+
+<!-- STEP 4 -->
+<div class="page-break"></div>
+<h3>Step 4: Implementing Deterministic Safety Engine (SAFE-01, SAFE-04, SAFE-05)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Verify that red-flag thresholds match clinical standards: Potassium (&ge;6.2 / &le;2.8), Platelets (&le;20,000), Hemoglobin (&le;7.0), Glucose (&le;50 / &ge;350), Creatinine (&ge;5.0).</li>
+    <li>Verify rule: Red flags must NEVER depend on AI/LLM availability.</li>
+    <li>Verify rule: Banned phrases must block diagnosis, medication changes, and doctor bypass.</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Implement the deterministic medical safety engine in backend/safety/:
+1. backend/safety/rules.py:
+   - Biomarker status classifier using STRICTLY report reference ranges (never invent ranges; return no_range_on_report if missing).
+   - Deterministic red-flag emergency evaluator for Potassium, Platelets, Hemoglobin, Glucose, Creatinine.
+2. backend/safety/banned_phrases.py:
+   - Regex filter scanning AI output to block diagnoses, medication dose changes, and physician bypass advice with safe fallbacks.
+3. Write automated unit tests in tests/test_safety.py and execute them using Python's built-in unittest module.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  LLMs can hallucinate or fail during API outages. Deterministic safety rules in plain Python execute instantaneously and 
+  guarantee that a patient with life-threatening hyperkalemia or thrombocytopenia receives an immediate emergency alert, even if Gemini is down.
+</div>
+
+<!-- STEP 5 -->
+<h3>Step 5: Tesseract OCR Engine &amp; User Verification Re-Validation (OCR-06 to OCR-09)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Check that Tesseract OCR executable exists on the system (<code>C:\Program Files\Tesseract-OCR\tesseract.exe</code>).</li>
+    <li>Review OCR extraction requirements from <code>docs/06-test-plan.md</code> (TC-08, TC-09, TC-10).</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Implement the OCR extraction engine and user correction workflow in backend/integrations/ocr.py:
+1. 'run_tesseract': Wrap Tesseract CLI execution with fallback to system PATH.
+2. 'assess_text_clarity': Calculate noise ratio and set requires_verification=True if clarity is poor.
+3. 'parse_biomarkers_from_text': Extract test name, value, unit, and printed range using regex.
+4. 'apply_user_corrections': Accept corrected text, re-parse biomarkers, and re-evaluate red flags.
+5. Create tests/test_ocr.py verifying clean extraction, blurred text flagging, and user correction re-validation.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Medical OCR is imperfect; character degradation (e.g. 13.5 read as 1?.5) can cause dangerous interpretations. 
+  By scoring clarity and re-evaluating corrected text, we enforce the human-in-the-loop requirement mandated by clinical safety.
+</div>
+
+<!-- STEP 6 -->
+<h3>Step 6: Automated API Contract Test Suite (TEST-14, API-01 to API-12)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Read <code>docs/06c-api-contracts.md</code> and <code>shared/types.ts</code>.</li>
+    <li>Confirm expected HTTP status codes: 200 (OK), 400 (Empty upload), 413 (Over 10 MB), 415 (Unsupported format), 422 (Validation error).</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Create tests/test_api_contract.py implementing 13 automated contract tests verifying:
+- GET /api/health schema
+- POST /api/upload 10 MB limit (413), empty file (400), and format validation (415)
+- POST /api/extract payload structure and uncertainty flags
+- POST /api/extract/{id}/corrections non-empty text validation (422)
+- POST /api/explain multi-language options (English, Hindi, Kannada) and reading levels
+- Consistent standardized error responses (success, message, error_code)
+- Preserving the exact mandatory disclaimer: 'This explains your report. It does not replace your doctor.'
+Execute the entire test suite and verify 100% pass rate.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Contract testing ensures that frontend and backend developers can work completely in parallel without contract drift. 
+  It provides an executable specification for Person 2's backend.
+</div>
+
+<!-- STEP 7 -->
+<div class="page-break"></div>
+<h3>Step 7: Privacy, PHI Log Sanitization &amp; Ephemeral Lifecycle (SAFE-08, OCR-10, TEST-13)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Review <code>docs/06b-safety-rules.md</code> Section 9 (Privacy and Data Protection).</li>
+    <li>Confirm rule: No patient medical values or report snippets in logs or analytics.</li>
+    <li>Confirm rule: Temporary uploaded documents must be purged completely (no permanent storage in MVP).</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Implement privacy protection and ephemeral storage lifecycle in backend/safety/privacy.py:
+1. 'sanitize_log_message' and 'PrivacyPreservingLogFilter': Automatically redact PHI, lab values, and report snippets from logs.
+2. 'EphemeralStorageManager': Manage temporary session directories, block path traversal (../), provide 'cleanup_document' on demand, and 'cleanup_expired' using TTL.
+3. Add tests/test_privacy.py covering log redaction, path traversal security, and TTL deletion. Run all tests.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Healthcare compliance mandates data privacy by design. Ensuring medical reports never hit persistent application logs 
+  and files are strictly purged protects patient confidentiality and prevents HIPAA/DPDP violations.
+</div>
+
+<!-- STEP 8 -->
+<h3>Step 8: Frontend Application Scaffolding (React + Vite + TypeScript)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Check Node.js and npm versions (<code>node -v</code>, <code>npm -v</code>).</li>
+    <li>Review Screen flows in <code>docs/04-design.md</code> (Language, Upload, Check Values, Results, Doctor Questions, Share).</li>
+    <li>Ensure medical disclaimer is positioned prominently on every view.</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Scaffold the complete React 18 + Vite + TypeScript frontend in frontend/:
+- Implement the 6 core screens: LanguageSelector, UploadView (10 MB validation), CheckValuesView (with manual correction &amp; empty state guard for non-medical images), ResultsView (red-flag banners &amp; biomarker cards), DoctorQuestionsView (3-6 questions), and ShareView (PDF download &amp; WhatsApp link).
+- Add live backend status indicator badge in header.
+- Add mandatory disclaimer footer: 'This explains your report. It does not replace your doctor.'
+- Verify production build with 'npm run build'.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Delivers the user-facing MVP application for Person 1. Incorporating the empty state guard prevents random non-medical 
+  photos from displaying phantom lab values, and the disclaimer ensures medical liability compliance.
+</div>
+
+<!-- STEP 9 -->
+<h3>Step 9: GitHub Actions CI/CD Pipeline Automation (REL-04)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Verify that all 40 automated tests pass locally.</li>
+    <li>Verify that <code>frontend/package-lock.json</code> is tracked in git.</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Configure GitHub Actions CI workflow in .github/workflows/ci.yml:
+1. Trigger on push and pull_request to main.
+2. Job 'python-tests': Run Python 3.12 with 'python -m unittest discover tests -v' (all 40 tests).
+3. Job 'frontend-build': Run Node.js 20 with 'npm ci' and 'npm run build' in frontend/.
+Commit and push to origin/main.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Automated CI is a non-negotiable release gate. It ensures that any future commits by teammates immediately trigger 
+  automated regression testing on GitHub before deployment.
+</div>
+
+<!-- STEP 10 -->
+<div class="page-break"></div>
+<h3>Step 10: Clinical Review &amp; Medical Sign-Off Protocol (SAFE-12, M-02)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Review <code>docs/09-release.md</code> Section 8.2 &amp; 14 (Release Acceptance Gates).</li>
+    <li>Identify the clinical review requirement: Qualified physician (MBBS/MD) review of red flags and benchmark explanations.</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Create docs/06d-clinical-review-protocol.md to fulfill SAFE-12 and release gate M-02:
+1. Emergency Red-Flag Threshold Table with clinical rationales for Potassium, Platelets, Hemoglobin, Glucose, Creatinine.
+2. Review of the 10 anonymized benchmark fixtures across English, Hindi, and Kannada.
+3. Formal Physician Review &amp; Sign-Off Sheet template including Doctor Name, Registration Number, State Medical Council, and approval checkboxes.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Software engineers cannot self-approve clinical safety thresholds. Providing a structured audit sheet allows a licensed physician 
+  to formally sign off on emergency triage levels before real patients use the tool.
+</div>
+
+<!-- STEP 11 -->
+<h3>Step 11: FastAPI Application Server Implementation (backend/main.py)</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Verify that <code>fastapi</code> and <code>uvicorn</code> are installed in the Python environment.</li>
+    <li>Verify that <code>backend/safety/rules.py</code>, <code>banned_phrases.py</code>, <code>privacy.py</code>, and <code>integrations/ocr.py</code> are present.</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Create backend/main.py implementing the full FastAPI server adhering to docs/06c-api-contracts.md:
+- CORS middleware for React frontend.
+- GET /api/health
+- POST /api/upload (enforcing 10 MB limit and ephemeral storage)
+- POST /api/extract (Tesseract OCR + clarity scoring)
+- POST /api/extract/{id}/corrections (user verification re-parsing)
+- POST /api/explain (deterministic red flags + educational text generation + banned phrase sanitization)
+- POST /api/questions (3 to 6 doctor consultation questions)
+- POST /api/feedback (rating submission)
+Verify the server loads cleanly with zero import errors.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Transitions ReportSaathi from a collection of specifications into a fully functional, live-running application. 
+  The frontend and backend can now interact end-to-end.
+</div>
+
+<!-- STEP 12 -->
+<h3>Step 12: Team Handover &amp; WhatsApp Updates Generation</h3>
+
+<div class="check-card">
+  <div class="check-title">WHAT TO CHECK BEFORE GIVING THIS PROMPT:</div>
+  <ul>
+    <li>Verify all tests pass (<code>40/40 OK</code>).</li>
+    <li>Verify all local commits are pushed to <code>origin/main</code>.</li>
+  </ul>
+</div>
+
+<div class="prompt-card">
+  <div class="prompt-title">VERBATIM PROMPT TO GIVE ANTIGRAVITY:</div>
+  <pre class="prompt-text">Draft concise, professional handover messages for our team WhatsApp group:
+1. Message to Chethan (Person 2 - DevOps/Backend): Explaining how to pull main, import backend safety modules, and run the 40 contract tests.
+2. Message to Shrinidhi (Person 1 - Product/Design): Outlining QA pass metrics in docs/09-release.md and sharing the clinical review audit sheet (docs/06d-clinical-review-protocol.md) for doctor sign-off.</pre>
+</div>
+
+<div class="why-card">
+  <div class="why-title">WHY WE GAVE THIS PROMPT:</div>
+  Completes the collaborative loop. Clear, jargon-free handover messages ensure team members know exactly how to integrate 
+  the engineering deliverables into their remaining tasks.
+</div>
+
+<!-- SECTION 4: TROUBLESHOOTING -->
+<div class="page-break"></div>
+<h2>4. Antigravity Operational Best Practices &amp; Troubleshooting</h2>
+
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Issue / Error Encountered</th>
+      <th>Root Cause in Antigravity</th>
+      <th>Proven Solution &amp; Prevention</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>getaddrinfo() thread failed to start</strong></td>
+      <td>Standard Sandbox Mode blocks outbound network by default.</td>
+      <td>Re-run the command with <code>BypassSandbox: true</code> and the exact same <code>toolSummary</code>.</td>
+    </tr>
+    <tr>
+      <td><strong>Write-Progress console buffer error (0x5)</strong></td>
+      <td>PowerShell <code>Expand-Archive</code> fails in headless terminal buffers on Windows.</td>
+      <td>Use Python standard library (<code>zipfile.ZipFile</code>) to extract archives cleanly.</td>
+    </tr>
+    <tr>
+      <td><strong>Pytest connection timeout in sandbox</strong></td>
+      <td>Pytest was not installed locally and pip install blocked in offline sandbox.</td>
+      <td>Use Python's built-in <code>unittest</code> module (<code>python -m unittest discover tests</code>). Zero external dependencies.</td>
+    </tr>
+    <tr>
+      <td><strong>Unused variable compilation error (TS6133)</strong></td>
+      <td>TypeScript strict mode rejects imported but unused interfaces in React components.</td>
+      <td>Run <code>npm run build</code> locally to catch TS errors before committing. Strip unused imports.</td>
+    </tr>
+    <tr>
+      <td><strong>Phantom lab values on non-medical uploads</strong></td>
+      <td>Frontend mock client fell back silently to <code>sample-report.json</code> on backend errors.</td>
+      <td>Implement active backend health probe and empty state guard (<code>values.length === 0</code>) in UI.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SECTION 5: MASTER CHEAT SHEET -->
+<h2>5. Master Prompt Cheat Sheet</h2>
+<table class="data-table">
+  <thead>
+    <tr>
+      <th>Phase</th>
+      <th>Pre-Flight Check</th>
+      <th>Key Antigravity Instruction</th>
+      <th>Expected Deliverable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>1. Sync</strong></td>
+      <td>Local working tree clean</td>
+      <td><code>git fetch origin &amp;&amp; git log HEAD..origin/main</code></td>
+      <td>Confirmed zero merge conflicts</td>
+    </tr>
+    <tr>
+      <td><strong>2. Fixtures</strong></td>
+      <td>Verify 10 clinical scenarios</td>
+      <td><code>Create 10 test fixtures in tests/fixtures/ adhering to docs/06</code></td>
+      <td>10 anonymized JSON fixtures</td>
+    </tr>
+    <tr>
+      <td><strong>3. Safety</strong></td>
+      <td>Review red-flag cutoffs</td>
+      <td><code>Implement deterministic rules in backend/safety/rules.py</code></td>
+      <td>Red flags + banned phrase filter</td>
+    </tr>
+    <tr>
+      <td><strong>4. OCR</strong></td>
+      <td>Check Tesseract executable</td>
+      <td><code>Implement Tesseract wrapper &amp; clarity scorer in backend/integrations/</code></td>
+      <td>OCR parser with correction flow</td>
+    </tr>
+    <tr>
+      <td><strong>5. Contract</strong></td>
+      <td>Inspect docs/06c contracts</td>
+      <td><code>Create tests/test_api_contract.py for all endpoints</code></td>
+      <td>13 contract tests passing</td>
+    </tr>
+    <tr>
+      <td><strong>6. Privacy</strong></td>
+      <td>Review data protection rules</td>
+      <td><code>Implement log scrubbing &amp; ephemeral storage in backend/safety/privacy.py</code></td>
+      <td>PHI redacted + auto TTL purge</td>
+    </tr>
+    <tr>
+      <td><strong>7. Frontend</strong></td>
+      <td>Verify npm / Node.js v20</td>
+      <td><code>Scaffold 6 screens in frontend/ with React + Vite + TypeScript</code></td>
+      <td>Clean build in &lt;800ms</td>
+    </tr>
+    <tr>
+      <td><strong>8. CI/CD</strong></td>
+      <td>All tests passing locally</td>
+      <td><code>Configure GitHub Actions in .github/workflows/ci.yml</code></td>
+      <td>Green automated build on GitHub</td>
+    </tr>
+    <tr>
+      <td><strong>9. Clinical</strong></td>
+      <td>Review release gate M-02</td>
+      <td><code>Create docs/06d-clinical-review-protocol.md with doctor sign-off sheet</code></td>
+      <td>Physician audit protocol ready</td>
+    </tr>
+    <tr>
+      <td><strong>10. Backend</strong></td>
+      <td>Verify fastapi &amp; uvicorn</td>
+      <td><code>Create backend/main.py implementing all FastAPI contract endpoints</code></td>
+      <td>Live runnable API server</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="margin-top: 30px; text-align: center; font-size: 8.5pt; color: #64748b; border-top: 1px solid #e2e8f0; padding-top: 10px;">
+  ReportSaathi Engineering &amp; QA Playbook • Developed with Google Antigravity • All 40 Tests Passing (100%)
+</div>
+
+</body>
+</html>

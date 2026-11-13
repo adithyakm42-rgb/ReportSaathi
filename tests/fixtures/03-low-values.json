@@ -1,0 +1,79 @@
+{
+  "fixture_id": "03-low-values",
+  "title": "Low Hemoglobin and Ferritin with Iron Supplement Prescription",
+  "description": "Report with low hemoglobin and ferritin below printed ranges, plus an accompanying prescription.",
+  "patient": {
+    "anonymized_id": "PT-003",
+    "age": 27,
+    "gender": "Female"
+  },
+  "raw_text": "COMMUNITY HEALTH CLINIC\nPatient ID: PT-003\nDate: 2026-11-10\n--------------------------------------------------\nHemoglobin: 9.8 g/dL (Ref Range: 12.0 - 15.5)\nSerum Ferritin: 11.5 ng/mL (Ref Range: 20.0 - 200.0)\nTotal Iron Binding Capacity (TIBC): 420 ug/dL (Ref Range: 250 - 400)\n--------------------------------------------------\nPRESCRIPTION:\n1. Tab. Ferrous Sulphate 200 mg | 1-0-0 after breakfast | 30 days\n2. Tab. Vitamin C 500 mg | 1-0-0 with iron tablet | 30 days\n--------------------------------------------------\nNote: Follow up in 4 weeks.",
+  "extracted_data": {
+    "document_id": "doc-low-03",
+    "extraction_status": "completed",
+    "requires_verification": false,
+    "confidence_score": 0.95,
+    "values": [
+      {
+        "test": "Hemoglobin",
+        "value": 9.8,
+        "unit": "g/dL",
+        "range_on_report": "12.0 - 15.5",
+        "range_low": 12.0,
+        "range_high": 15.5,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Lower than the range printed on your report. Low hemoglobin can cause fatigue or weakness."
+      },
+      {
+        "test": "Serum Ferritin",
+        "value": 11.5,
+        "unit": "ng/mL",
+        "range_on_report": "20.0 - 200.0",
+        "range_low": 20.0,
+        "range_high": 200.0,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Below the printed range. Ferritin indicates your body's stored iron levels."
+      },
+      {
+        "test": "Total Iron Binding Capacity (TIBC)",
+        "value": 420.0,
+        "unit": "ug/dL",
+        "range_on_report": "250 - 400",
+        "range_low": 250.0,
+        "range_high": 400.0,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Higher than the printed range. TIBC measures the blood's capacity to bind iron."
+      }
+    ],
+    "medicines": [
+      {
+        "name": "Ferrous Sulphate 200 mg",
+        "purpose": "Iron supplement commonly prescribed when hemoglobin or ferritin is low.",
+        "timing_as_written": "1-0-0 after breakfast",
+        "watch_for": [
+          "Dark stools are common and harmless",
+          "Inform doctor if severe stomach pain occurs"
+        ]
+      },
+      {
+        "name": "Vitamin C 500 mg",
+        "purpose": "Ascorbic acid tablet, often taken alongside iron to enhance iron absorption.",
+        "timing_as_written": "1-0-0 with iron tablet",
+        "watch_for": [
+          "Take with water",
+          "Consult doctor if acid reflux occurs"
+        ]
+      }
+    ],
+    "red_flags": [],
+    "doctor_questions": [
+      "What could be causing my low hemoglobin level?",
+      "For how many weeks should I take the iron supplement before repeating the test?",
+      "Are there specific dietary changes that can support my iron levels?"
+    ],
+    "disclaimer": "This explains your report. It does not replace your doctor."
+  }
+}

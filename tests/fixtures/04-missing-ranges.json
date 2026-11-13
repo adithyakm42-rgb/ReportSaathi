@@ -1,0 +1,66 @@
+{
+  "fixture_id": "04-missing-ranges",
+  "title": "Inflammatory Markers with Missing Printed Ranges",
+  "description": "Tests where one biomarker has a printed reference range while others lack a printed range, requiring the system to return no_range_on_report without guessing.",
+  "patient": {
+    "anonymized_id": "PT-004",
+    "age": 41,
+    "gender": "Male"
+  },
+  "raw_text": "DIAGNOSTIC PATHOLOGY CENTRE\nPatient ID: PT-004\nDate: 2026-11-10\n--------------------------------------------------\nErythrocyte Sedimentation Rate (ESR): 28 mm/hr (Ref Range: 0 - 15)\nC-Reactive Protein (CRP): 7.4 mg/L\nBlood Group & Rh Type: O Positive\nRheumatoid Factor (RA Factor): 18.0 IU/mL\n--------------------------------------------------\nNote: CRP and Blood Group do not have an automated interval printed on this slip.",
+  "extracted_data": {
+    "document_id": "doc-norange-04",
+    "extraction_status": "completed",
+    "requires_verification": false,
+    "confidence_score": 0.94,
+    "values": [
+      {
+        "test": "Erythrocyte Sedimentation Rate (ESR)",
+        "value": 28.0,
+        "unit": "mm/hr",
+        "range_on_report": "0 - 15",
+        "range_low": 0.0,
+        "range_high": 15.0,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Higher than the reference range printed on your report. ESR is a general marker related to inflammation."
+      },
+      {
+        "test": "C-Reactive Protein (CRP)",
+        "value": 7.4,
+        "unit": "mg/L",
+        "range_on_report": null,
+        "range_low": null,
+        "range_high": null,
+        "status": "no_range_on_report",
+        "is_red_flag": false,
+        "explanation": "Your report does not list a reference range for this test. Reference ranges vary across labs; please confirm this value with your doctor."
+      },
+      {
+        "test": "Blood Group & Rh Type",
+        "value": "O Positive",
+        "unit": null,
+        "range_on_report": null,
+        "range_low": null,
+        "range_high": null,
+        "status": "no_range_on_report",
+        "is_red_flag": false,
+        "explanation": "Blood grouping is a qualitative result identifying your blood type and Rh factor. It does not have a numerical reference range."
+      },
+      {
+        "test": "Rheumatoid Factor (RA Factor)",
+        "value": 18.0,
+        "unit": "IU/mL",
+        "range_on_report": null,
+        "range_low": null,
+        "range_high": null,
+        "status": "no_range_on_report",
+        "is_red_flag": false,
+        "explanation": "No reference range is printed for this test on your report. Discuss with your physician for clinical interpretation."
+      }
+    ],
+    "medicines": [],
+    "red_flags": [],
+    "disclaimer": "This explains your report. It does not replace your doctor."
+  }
+}

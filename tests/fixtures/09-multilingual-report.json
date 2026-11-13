@@ -1,0 +1,69 @@
+{
+  "fixture_id": "09-multilingual-report",
+  "title": "Multilingual Benchmark for English, Hindi, and Kannada",
+  "description": "Baseline gold-standard explanations across 3 languages (English, Hindi, Kannada) and 3 reading levels (Simple, Standard, Detailed) preserving medical units and terms.",
+  "patient": {
+    "anonymized_id": "PT-009",
+    "age": 55,
+    "gender": "Female"
+  },
+  "raw_text": "COMMUNITY HEALTH DIAGNOSTICS\nPatient ID: PT-009\nDate: 2026-11-10\n--------------------------------------------------\nHemoglobin: 10.2 g/dL (Ref Range: 12.0 - 15.5)\nFasting Blood Glucose: 138 mg/dL (Ref Range: 70 - 100)\nSerum Calcium: 9.2 mg/dL (Ref Range: 8.5 - 10.5)\n--------------------------------------------------\nRx: Tab. Metformin 500 mg | 0-1-0 after dinner",
+  "extracted_data": {
+    "document_id": "doc-multi-09",
+    "extraction_status": "completed",
+    "requires_verification": false,
+    "confidence_score": 0.96,
+    "values": [
+      {
+        "test": "Hemoglobin",
+        "value": 10.2,
+        "unit": "g/dL",
+        "range_on_report": "12.0 - 15.5",
+        "status": "needs_attention"
+      },
+      {
+        "test": "Fasting Blood Glucose",
+        "value": 138.0,
+        "unit": "mg/dL",
+        "range_on_report": "70 - 100",
+        "status": "needs_attention"
+      },
+      {
+        "test": "Serum Calcium",
+        "value": 9.2,
+        "unit": "mg/dL",
+        "range_on_report": "8.5 - 10.5",
+        "status": "normal"
+      }
+    ],
+    "medicines": [
+      {
+        "name": "Metformin 500 mg",
+        "purpose": "A common medication prescribed to help manage blood sugar levels.",
+        "timing_as_written": "0-1-0 after dinner",
+        "watch_for": [
+          "Take with meals to reduce stomach upset",
+          "Consult your doctor if you experience persistent nausea"
+        ]
+      }
+    ],
+    "translations": {
+      "en": {
+        "simple": "Your hemoglobin is slightly low at 10.2 g/dL, which can make you feel tired. Your fasting blood sugar is 138 mg/dL, which is above normal. Your calcium is healthy.",
+        "standard": "Hemoglobin is 10.2 g/dL (reference: 12.0 - 15.5 g/dL), indicating mild anemia. Fasting blood glucose is elevated at 138 mg/dL (reference: 70 - 100 mg/dL). Calcium is normal at 9.2 mg/dL.",
+        "detailed": "Complete metabolic review: Hemoglobin of 10.2 g/dL reflects reduced oxygen-carrying capacity. Fasting glucose at 138 mg/dL indicates hyperglycemia requiring medical review. Serum calcium at 9.2 mg/dL is well-balanced within the physiological window."
+      },
+      "hi": {
+        "simple": "आपका हीमोग्लोबिन 10.2 g/dL है जो सामान्य से थोड़ा कम है, इससे थकान महसूस हो सकती है। आपकी खाली पेट की शुगर 138 mg/dL है जो सामान्य से अधिक है। कैल्शियम सामान्य है।",
+        "standard": "हीमोग्लोबिन 10.2 g/dL (सामान्य सीमा: 12.0 - 15.5 g/dL) है, जो हल्का कम है। फास्टिंग ब्लड ग्लूकोज 138 mg/dL है जो सामान्य से अधिक है। कैल्शियम 9.2 mg/dL पर बिल्कुल सामान्य है।",
+        "detailed": "विस्तृत समीक्षा: हीमोग्लोबिन 10.2 g/dL लाल रक्त कोशिकाओं की कमी को दर्शाता है। खाली पेट रक्त शर्करा 138 mg/dL हाइपरग्लाइसेमिया को इंगित करता है, जिसके लिए डॉक्टर से परामर्श आवश्यक है। सीरम कैल्शियम 9.2 mg/dL सुरक्षित सीमा में है।"
+      },
+      "kn": {
+        "simple": "ನಿಮ್ಮ ಹಿಮೋಗ್ಲೋಬಿನ್ 10.2 g/dL ಇದ್ದು, ಸಾಮಾನ್ಯಕ್ಕಿಂತ ಸ್ವಲ್ಪ ಕಡಿಮೆಯಾಗಿದೆ. ಇದರಿಂದ ಆಯಾಸವಾಗಬಹುದು. ರಕ್ತದಲ್ಲಿನ ಸಕ್ಕರೆ ಪ್ರಮಾಣ 138 mg/dL ಇದ್ದು, ಹೆಚ್ಚಾಗಿದೆ. ಕ್ಯಾಲ್ಸಿಯಂ ಸಾಮಾನ್ಯವಾಗಿದೆ.",
+        "standard": "ಹಿಮೋಗ್ಲೋಬಿನ್ 10.2 g/dL (ವರದಿಯ ಶ್ರೇಣಿ: 12.0 - 15.5 g/dL) ಇದ್ದು, ಸ್ವಲ್ಪ ಕಡಿಮೆಯಾಗಿದೆ. ಖಾಲಿ ಹೊಟ್ಟೆಯ ರಕ್ತದ ಗ್ಲೂಕೋಸ್ 138 mg/dL ಇದ್ದು ಹೆಚ್ಚಾಗಿದೆ. ಕ್ಯಾಲ್ಸಿಯಂ 9.2 mg/dL ಸಾಮಾನ್ಯ ಮಟ್ಟದಲ್ಲಿದೆ.",
+        "detailed": "ಸಮಗ್ರ ವಿಶ್ಲೇಷಣೆ: ಹಿಮೋಗ್ಲೋಬಿನ್ 10.2 g/dL ರಕ್ತಹೀನತೆಯ ಲಕ್ಷಣವನ್ನು ಸೂಚಿಸುತ್ತದೆ. ಉಪವಾಸದ ಗ್ಲೂಕೋಸ್ 138 mg/dL ಆಗಿದ್ದು, ವೈದ್ಯರೊಂದಿಗೆ ಸಮಾಲೋಚನೆ ಅಗತ್ಯವಿದೆ. ಸೀರಮ್ ಕ್ಯಾಲ್ಸಿಯಂ 9.2 mg/dL ಆರೋಗ್ಯಕರ ಮಿತಿಯಲ್ಲಿದೆ."
+      }
+    },
+    "disclaimer": "This explains your report. It does not replace your doctor."
+  }
+}

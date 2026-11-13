@@ -1,0 +1,58 @@
+{
+  "fixture_id": "05-blurry-report",
+  "title": "Low Quality / Blurry Photo with Uncertain OCR",
+  "description": "Simulated low-resolution mobile photo with motion blur, poor lighting, low confidence characters, and unparseable rows requiring user verification.",
+  "patient": {
+    "anonymized_id": "PT-005",
+    "age": 60,
+    "gender": "Unknown"
+  },
+  "raw_text": "C11N1CAL L4B... (unreadable header)\nPt: [BLURRED]  Dt: 10/??/26\n--------------------------------------------------\nHb / H3m0gl0b1n: 1?.2 ?? (Range: 12.0 - ??)\nW.B.C.: 7,??? /cmm\nPl4te1et: [UNREADABLE]\nGluc0se (R): 14?.0 mg/dL (Ref: 70 - 140)\n--------------------------------------------------\n*Ink smudge across signature*",
+  "extracted_data": {
+    "document_id": "doc-blur-05",
+    "extraction_status": "unclear",
+    "requires_verification": true,
+    "confidence_score": 0.42,
+    "fallback_message": "We could not read some information clearly. Please upload a clearer image or verify the extracted values manually.",
+    "values": [
+      {
+        "test": "Hemoglobin",
+        "value": null,
+        "raw_token": "1?.2 ??",
+        "unit": "g/dL",
+        "range_on_report": "12.0 - ??",
+        "status": "unclear",
+        "requires_user_correction": true,
+        "is_red_flag": false,
+        "explanation": "Could not be confidently recognized from the image."
+      },
+      {
+        "test": "WBC Count",
+        "value": null,
+        "raw_token": "7,???",
+        "unit": "/cumm",
+        "range_on_report": null,
+        "status": "unclear",
+        "requires_user_correction": true,
+        "is_red_flag": false,
+        "explanation": "Could not be confidently recognized from the image."
+      },
+      {
+        "test": "Random Blood Glucose",
+        "value": 140.0,
+        "raw_token": "14?.0",
+        "unit": "mg/dL",
+        "range_on_report": "70 - 140",
+        "range_low": 70.0,
+        "range_high": 140.0,
+        "status": "borderline",
+        "requires_user_correction": true,
+        "is_red_flag": false,
+        "explanation": "Value extracted with low confidence (approx. 140 mg/dL). Please verify before relying on explanation."
+      }
+    ],
+    "medicines": [],
+    "red_flags": [],
+    "disclaimer": "This explains your report. It does not replace your doctor."
+  }
+}

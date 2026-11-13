@@ -1,0 +1,77 @@
+{
+  "fixture_id": "02-high-values",
+  "title": "Lipid Profile with Elevated Cholesterol and Triglycerides",
+  "description": "Lipid profile with Total Cholesterol and Triglycerides above printed reference ranges.",
+  "patient": {
+    "anonymized_id": "PT-002",
+    "age": 52,
+    "gender": "Male"
+  },
+  "raw_text": "METABOLIC LAB SERVICES\nTest: Comprehensive Lipid Profile\nPatient ID: PT-002\nDate: 2026-11-10\n--------------------------------------------------\nTotal Cholesterol: 245 mg/dL (Ref Range: 125 - 200)\nTriglycerides: 215 mg/dL (Ref Range: 50 - 150)\nHDL Cholesterol: 42 mg/dL (Ref Range: 40 - 60)\nLDL Cholesterol: 160 mg/dL (Ref Range: 0 - 100)\nVLDL Cholesterol: 43 mg/dL (Ref Range: 5 - 30)\nCholesterol / HDL Ratio: 5.8 (Ref Range: 3.3 - 4.4)\n--------------------------------------------------\nComment: Mildly lipemic serum.",
+  "extracted_data": {
+    "document_id": "doc-high-02",
+    "extraction_status": "completed",
+    "requires_verification": false,
+    "confidence_score": 0.96,
+    "values": [
+      {
+        "test": "Total Cholesterol",
+        "value": 245.0,
+        "unit": "mg/dL",
+        "range_on_report": "125 - 200",
+        "range_low": 125.0,
+        "range_high": 200.0,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Higher than the reference range printed on your report. Discuss lifestyle or dietary steps with your doctor."
+      },
+      {
+        "test": "Triglycerides",
+        "value": 215.0,
+        "unit": "mg/dL",
+        "range_on_report": "50 - 150",
+        "range_low": 50.0,
+        "range_high": 150.0,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Higher than the printed range. Elevated triglycerides reflect fat levels in the blood."
+      },
+      {
+        "test": "HDL Cholesterol",
+        "value": 42.0,
+        "unit": "mg/dL",
+        "range_on_report": "40 - 60",
+        "range_low": 40.0,
+        "range_high": 60.0,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Within the normal range. HDL is commonly referred to as good cholesterol."
+      },
+      {
+        "test": "LDL Cholesterol",
+        "value": 160.0,
+        "unit": "mg/dL",
+        "range_on_report": "0 - 100",
+        "range_low": 0.0,
+        "range_high": 100.0,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Higher than the printed target range. Often evaluated along with other heart health markers."
+      },
+      {
+        "test": "VLDL Cholesterol",
+        "value": 43.0,
+        "unit": "mg/dL",
+        "range_on_report": "5 - 30",
+        "range_low": 5.0,
+        "range_high": 30.0,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Higher than the printed reference range."
+      }
+    ],
+    "medicines": [],
+    "red_flags": [],
+    "disclaimer": "This explains your report. It does not replace your doctor."
+  }
+}

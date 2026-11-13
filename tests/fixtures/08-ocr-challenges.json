@@ -1,0 +1,78 @@
+{
+  "fixture_id": "08-ocr-challenges",
+  "title": "Challenging Notations, Qualitative Values and Comparison Operators",
+  "description": "Tests handling of special clinical formats: inequality symbols (< 0.5), titer ratios (1:160), qualitative results (Negative), and comma-delimited numbers.",
+  "patient": {
+    "anonymized_id": "PT-008",
+    "age": 38,
+    "gender": "Female"
+  },
+  "raw_text": "SPECIALTY SEROLOGY AND BIOCHEMISTRY\nPatient ID: PT-008\nDate: 2026-11-10\n--------------------------------------------------\nHigh Sensitivity Troponin-I: < 0.02 ng/mL (Ref: < 0.04)\nHigh-Sensitivity CRP (hs-CRP): < 0.5 mg/L (Ref: < 1.0)\nWidal Test S. Typhi 'O': 1:160 titer (Ref: < 1:80)\nWidal Test S. Typhi 'H': 1:80 titer (Ref: < 1:80)\nHepatitis B Surface Antigen (HBsAg): Negative (Ref: Negative)\nAnti-HCV Antibodies: Non-Reactive (Ref: Non-Reactive)\nPlatelet Aggregation: 3,25,000 /uL (Ref: 1,50,000 - 4,50,000)\n--------------------------------------------------\nEnd of Serology Panel.",
+  "extracted_data": {
+    "document_id": "doc-challenge-08",
+    "extraction_status": "completed",
+    "requires_verification": false,
+    "confidence_score": 0.92,
+    "values": [
+      {
+        "test": "High Sensitivity Troponin-I",
+        "value": "< 0.02",
+        "parsed_numeric": 0.02,
+        "operator": "<",
+        "unit": "ng/mL",
+        "range_on_report": "< 0.04",
+        "range_low": 0.0,
+        "range_high": 0.04,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Reported as below 0.02 ng/mL, well within the safe reference limit printed (< 0.04 ng/mL)."
+      },
+      {
+        "test": "High-Sensitivity CRP (hs-CRP)",
+        "value": "< 0.5",
+        "parsed_numeric": 0.5,
+        "operator": "<",
+        "unit": "mg/L",
+        "range_on_report": "< 1.0",
+        "range_low": 0.0,
+        "range_high": 1.0,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Below 0.5 mg/L, which is within the desirable reference limit printed on your report."
+      },
+      {
+        "test": "Widal Test S. Typhi 'O'",
+        "value": "1:160",
+        "unit": "titer",
+        "range_on_report": "< 1:80",
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Reported titer (1:160) is higher than the reference cutoff (< 1:80) printed on your report. Discuss with your doctor."
+      },
+      {
+        "test": "Hepatitis B Surface Antigen (HBsAg)",
+        "value": "Negative",
+        "unit": null,
+        "range_on_report": "Negative",
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Result is Negative, matching the expected normal reference status."
+      },
+      {
+        "test": "Platelet Aggregation",
+        "value": 325000,
+        "raw_token": "3,25,000",
+        "unit": "/uL",
+        "range_on_report": "1,50,000 - 4,50,000",
+        "range_low": 150000,
+        "range_high": 450000,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Correctly parsed from Indian comma numbering (3,25,000) and within the normal printed reference range."
+      }
+    ],
+    "medicines": [],
+    "red_flags": [],
+    "disclaimer": "This explains your report. It does not replace your doctor."
+  }
+}

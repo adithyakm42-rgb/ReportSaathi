@@ -1,0 +1,91 @@
+{
+  "fixture_id": "10-red-flag-case",
+  "title": "Critical Laboratory Red-Flag Emergency Case",
+  "description": "Simulates critically life-threatening laboratory values (Potassium 6.8 mmol/L and Platelets 18,000 /uL) requiring instantaneous deterministic red-flag alert execution, emergency contact links, and persistent warnings even if AI service is offline.",
+  "patient": {
+    "anonymized_id": "PT-010",
+    "age": 63,
+    "gender": "Male"
+  },
+  "raw_text": "EMERGENCY CLINICAL BIOCHEMISTRY\nPatient ID: PT-010\nDate: 2026-11-10\n--------------------------------------------------\nSerum Potassium: 6.8 mmol/L (Ref Range: 3.5 - 5.1) *** CRITICAL HIGH ***\nSerum Sodium: 136 mmol/L (Ref Range: 135 - 145)\nPlatelet Count: 18,000 /cumm (Ref Range: 150,000 - 450,000) *** CRITICAL LOW ***\nSerum Creatinine: 3.8 mg/dL (Ref Range: 0.7 - 1.3) *** HIGH ***\n--------------------------------------------------\nALERT: Critical values telephoned to attending physician.",
+  "extracted_data": {
+    "document_id": "doc-crit-10",
+    "extraction_status": "completed",
+    "requires_verification": false,
+    "confidence_score": 0.98,
+    "is_red_flag": true,
+    "requires_immediate_medical_attention": true,
+    "red_flags": [
+      {
+        "test": "Serum Potassium",
+        "value": 6.8,
+        "unit": "mmol/L",
+        "severity": "CRITICAL_HIGH",
+        "clinical_concern": "Severe Hyperkalemia (Potassium > 6.2 mmol/L) carries an urgent risk of cardiac arrhythmia.",
+        "action_required": "Immediate emergency medical evaluation required."
+      },
+      {
+        "test": "Platelet Count",
+        "value": 18000,
+        "unit": "/cumm",
+        "severity": "CRITICAL_LOW",
+        "clinical_concern": "Severe Thrombocytopenia (Platelets < 20,000 /cumm) carries an urgent risk of spontaneous bleeding.",
+        "action_required": "Avoid trauma or blood-thinning medication; seek immediate clinical care."
+      }
+    ],
+    "emergency_actions": {
+      "call_emergency": "tel:112",
+      "call_ambulance": "tel:108",
+      "find_hospital_url": "https://www.google.com/maps/search/?api=1&query=hospital+near+me"
+    },
+    "emergency_message": "Your information indicates a potentially urgent medical concern. Please seek immediate medical attention or contact your local emergency service.",
+    "values": [
+      {
+        "test": "Serum Potassium",
+        "value": 6.8,
+        "unit": "mmol/L",
+        "range_on_report": "3.5 - 5.1",
+        "range_low": 3.5,
+        "range_high": 5.1,
+        "status": "critical_high",
+        "is_red_flag": true,
+        "explanation": "Significantly higher than the safe reference range. Requires immediate medical attention."
+      },
+      {
+        "test": "Serum Sodium",
+        "value": 136.0,
+        "unit": "mmol/L",
+        "range_on_report": "135 - 145",
+        "range_low": 135.0,
+        "range_high": 145.0,
+        "status": "normal",
+        "is_red_flag": false,
+        "explanation": "Within the normal healthy range."
+      },
+      {
+        "test": "Platelet Count",
+        "value": 18000,
+        "unit": "/cumm",
+        "range_on_report": "150000 - 450000",
+        "range_low": 150000,
+        "range_high": 450000,
+        "status": "critical_low",
+        "is_red_flag": true,
+        "explanation": "Critically low platelet count. Requires immediate medical attention."
+      },
+      {
+        "test": "Serum Creatinine",
+        "value": 3.8,
+        "unit": "mg/dL",
+        "range_on_report": "0.7 - 1.3",
+        "range_low": 0.7,
+        "range_high": 1.3,
+        "status": "needs_attention",
+        "is_red_flag": false,
+        "explanation": "Elevated above the reference range. Indicates impaired kidney clearance."
+      }
+    ],
+    "medicines": [],
+    "disclaimer": "This explains your report. It does not replace your doctor."
+  }
+}
