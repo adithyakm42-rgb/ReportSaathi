@@ -1,4 +1,5 @@
 # ReportSaathi
+<<<<<<< HEAD
 
 **AI-Assisted Medical Report Understanding Platform**
 
@@ -218,3 +219,6 @@ The team follows a documentation-first, safety-first development approach:
 **Project:** ReportSaathi  
 **Repository:** ReportSaathi-Project-Resources  
 **Status:** Implementation & QA Phase (40/40 Tests Passing, Frontend Built)
+=======
+AI-powered medical report explainer that converts complex medical reports into simple language.
+>>>>>>> 8dc615b86ee03dcd343fd4f20f4deda43da066f9
