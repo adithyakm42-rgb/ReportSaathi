@@ -1,8 +1,0 @@
-credential.helper=manager
-credential.credentialstore=wincredman
-user.name=Adithya K M
-user.email=adithyakm42@gmail.com
-filter.lfs.clean=git-lfs clean -- %f
-filter.lfs.smudge=git-lfs smudge -- %f
-filter.lfs.process=git-lfs filter-process
-filter.lfs.required=true
